@@ -1,0 +1,31 @@
+.marquee-bar {
+  background: #3b6d11;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #27500a;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #c0dd97;
+  padding: 0 2.5rem;
+  letter-spacing: 0.03em;
+}
+
+.marquee-track span::before {
+  content: "🌿";
+  margin-right: 0.75rem;
+  font-size: 12px;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

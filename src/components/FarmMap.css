@@ -1,0 +1,64 @@
+.direction-bar {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: #f9f9f7;
+}
+
+.direction-label {
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+}
+
+.direction-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dir-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0.5px solid transparent;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+
+.dir-btn:hover {
+  opacity: 0.85;
+}
+
+.dir-btn.google {
+  background: #4285F4;
+  color: white;
+}
+
+.dir-btn.waze {
+  background: #33CCFF;
+  color: white;
+}
+
+.dir-btn.osm {
+  background: #ffffff;
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.map-container {
+    margin: 30px;
+  height: 380px;
+  cursor: crosshair;
+}
+.map-address{
+    margin: 30px;
+}
