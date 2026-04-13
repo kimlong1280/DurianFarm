@@ -1,22 +1,36 @@
 import { useState, useEffect, useRef } from "react";
 import "./Slider.css";
 
+// ✅ Correct image import (fix GitHub issue)
+import slide1 from "../assets/slide1.jpg";
+import slide2 from "../assets/slide2.jpg";
+import slide3 from "../assets/slide3.jpg";
+import slide4 from "../assets/slide4.jpg";
+
 const slides = [
   {
-    img: "/src/assets/slide1.jpg",
-    
+    img: slide1,
+    tag: "Nature",
+    title: "Beautiful Landscape",
+    sub: "Enjoy peaceful scenery",
   },
   {
-    img: "/src/assets/slide2.jpg",
-    
+    img: slide2,
+    tag: "Travel",
+    title: "Adventure Awaits",
+    sub: "Explore the world",
   },
   {
-    img: "/src/assets/slide3.jpg",
-    
+    img: slide3,
+    tag: "City",
+    title: "Urban Lifestyle",
+    sub: "Modern living experience",
   },
   {
-    img: "/src/assets/slide4.jpg",
-   
+    img: slide4,
+    tag: "Ocean",
+    title: "Blue Horizon",
+    sub: "Relax by the sea",
   },
 ];
 
@@ -27,16 +41,19 @@ export default function Slider() {
   const [progressKey, setProgressKey] = useState(0);
   const timerRef = useRef(null);
 
+  // Auto slide
   const startAuto = () => {
     clearInterval(timerRef.current);
+
     timerRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
       setProgressKey((k) => k + 1);
     }, INTERVAL);
   };
 
-  const goTo = (idx) => {
-    setCurrent((idx + slides.length) % slides.length);
+  // Manual navigation
+  const goTo = (index) => {
+    setCurrent((index + slides.length) % slides.length);
     setProgressKey((k) => k + 1);
     startAuto();
   };
@@ -54,22 +71,30 @@ export default function Slider() {
       >
         {slides.map((slide, i) => (
           <div className="slide" key={i}>
-            <img className="slide-img" src={slide.img} alt={slide.title} />
+            <img src={slide.img} className="slide-img" alt={slide.title} />
+
             <div className="slide-overlay" />
+
             <div className="slide-content">
               <span className="slide-tag">{slide.tag}</span>
-              <div className="slide-title">{slide.title}</div>
-              <div className="slide-sub">{slide.sub}</div>
+              <h2 className="slide-title">{slide.title}</h2>
+              <p className="slide-sub">{slide.sub}</p>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Navigation */}
       <div className="slider-nav">
-        <button className="slider-btn" onClick={() => goTo(current - 1)}>←</button>
-        <button className="slider-btn" onClick={() => goTo(current + 1)}>→</button>
+        <button className="slider-btn" onClick={() => goTo(current - 1)}>
+          ←
+        </button>
+        <button className="slider-btn" onClick={() => goTo(current + 1)}>
+          →
+        </button>
       </div>
 
+      {/* Dots */}
       <div className="slider-dots">
         {slides.map((_, i) => (
           <button
@@ -80,8 +105,12 @@ export default function Slider() {
         ))}
       </div>
 
-      <div key={progressKey} className="slider-progress"
-        style={{ animationDuration: `${INTERVAL}ms` }} />
+      {/* Progress bar */}
+      <div
+        key={progressKey}
+        className="slider-progress"
+        style={{ animationDuration: `${INTERVAL}ms` }}
+      />
     </div>
   );
 }
