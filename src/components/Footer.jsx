@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="footer-info">
           <h4>Visit Us</h4>
           <ul>
-            <li>📍 12.3724083,105.6192632</li>
+            <li>📍 12.3620080,105.5878421</li>
             <li>📞 +855 90722287</li>
             <li>📞 +855 78734756</li>
           </ul>
@@ -31,7 +31,7 @@ export default function Footer() {
             <li
               onClick={() =>
                 window.open(
-                  `https://www.google.com/maps/dir/?api=1&destination=12.3724083,105.6192632`,
+                  `https://www.google.com/maps/dir/?api=1&destination=12.3620080,105.5878421`,
                   "_blank"
                 )
               }
@@ -41,7 +41,7 @@ export default function Footer() {
             <li
               onClick={() =>
                 window.open(
-                  `https://waze.com/ul?ll=12.3724083,105.6192632&navigate=yes`,
+                  `https://waze.com/ul?ll=12.3620080,105.5878421&navigate=yes`,
                   "_blank"
                 )
               }
@@ -51,7 +51,7 @@ export default function Footer() {
             <li
               onClick={() =>
                 window.open(
-                  `https://www.google.com/maps?q=12.3724083,105.6192632`,
+                  `https://www.google.com/maps?q=12.3620080,105.5878421`,
                   "_blank"
                 )
               }

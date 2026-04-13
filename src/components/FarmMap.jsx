@@ -17,8 +17,8 @@ const farmIcon = L.divIcon({
   popupAnchor: [0, -40],
 });
 
-const FARM_LAT = 12.3724083;
-const FARM_LNG = 105.6192632;
+const FARM_LAT = 12.3620080;
+const FARM_LNG = 105.5878421;
 
 export default function FarmMap() {
   const mapRef = useRef(null);
